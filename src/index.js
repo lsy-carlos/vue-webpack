@@ -1,14 +1,17 @@
-import _ from 'lodash'
-import printMe from './print.js'
+import Vue from 'vue'
+import VueRouter from 'vue-router'
+import App from './app'
+import routes from './route.config'
 
-function component() {
-    var element = document.createElement('div');
-    var btn = document.createElement('button');
+Vue.use(VueRouter);
 
-    element.innerHTML = _.join(['Hello', 'webpack','i'], ' ');
-    btn.innerHTML = "Click me and check the console!";
-    btn.onclick = printMe;
-    element.appendChild(btn);
-    return element;
-}
-document.body.appendChild(component());
+
+const router = new VueRouter({
+    routes
+})
+
+new Vue({
+    ...App,
+    router
+}).$mount('#app');
+
