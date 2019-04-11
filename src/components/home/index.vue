@@ -1,6 +1,7 @@
 <template>
     <div>
-        {{message}}
+        <h3>{{message}}</h3>
+        <button>go to another</button>
     </div>
 </template>
 

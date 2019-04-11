@@ -1,13 +1,19 @@
 
 const load = name => {
     return r=>require.ensure([],()=>{
-        r(require(`./components/${name}.vue`));
+        r(require(`./components/${name}/index.vue`));
     },'vue')
 }
-
-export default routes = [
+ 
+const routes = [
     {
         path: '/',
-        component:load('home')
+        redirect: '/home',
+    },
+    {
+        path:'/home',
+        component: load('home')
     }
 ]
+
+export default routes 

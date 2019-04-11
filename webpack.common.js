@@ -10,21 +10,24 @@ module.exports = {
         app:'./src/index.js'
     },
     output:{
-        filename:'[name].[hash].js',
+        filename:'main.js',
         path:path.resolve(__dirname,'dist'),
     },
     plugins:[
         new CleanWebpackPlugin(),
         new HtmlWebpackPlugin({
-            title:'vue-webapck-demo',
-            template: './index.html',
-            inject: 'head'
+            template: './src/index.html',
+            filename: 'index.html',
         }),
         new VueLoaderPlugin(),
         new progressBarWebpackPlugin()
     ],
     resolve:{
-        extensions: ['.js', '.vue', '.json']
+        extensions: ['.js', '.vue', '.json'],
+        alias: {
+            //不这样写 import vue 时实际引入的是vue.common.js
+            'vue': 'vue/dist/vue.js'
+        }
     },
     module:{
         rules:[
@@ -42,7 +45,7 @@ module.exports = {
             },
             {
                 test:/\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
-                loader:'url-loader'
+                loader: 'url-loader'
             }
         ]
     }
