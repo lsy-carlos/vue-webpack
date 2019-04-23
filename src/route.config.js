@@ -2,7 +2,7 @@
 const load = name => {
     return r=>require.ensure([],()=>{
         r(require(`./components/${name}/index.vue`));
-    },'vue')
+    },'component')
 }
  
 const routes = [
@@ -13,6 +13,14 @@ const routes = [
     {
         path:'/home',
         component: load('home')
+    },
+    {
+        path:'/learnWeb',
+        component: load('learnWeb')
+    },
+    {
+        path:'/vueEmit',
+        component:load('vueEmit')
     }
 ]
 

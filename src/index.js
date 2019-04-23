@@ -5,6 +5,7 @@ import routes from './route.config'
 
 Vue.use(VueRouter);
 
+window.log = console.log.bind(null)
 
 const router = new VueRouter({
     routes

@@ -10,8 +10,8 @@ module.exports = {
         app:'./src/index.js'
     },
     output:{
-        filename:'main.js',
-        path:path.resolve(__dirname,'dist'),
+        filename:'[name].[hash].js',
+        path: path.resolve(__dirname, 'dist'),//__filename始终是用绝对路径显示一个文件的位置，而__dirname则是该文件所在目录的绝对路径
     },
     plugins:[
         new CleanWebpackPlugin(),
@@ -26,7 +26,8 @@ module.exports = {
         extensions: ['.js', '.vue', '.json'],
         alias: {
             //不这样写 import vue 时实际引入的是vue.common.js
-            'vue': 'vue/dist/vue.js'
+            'vue': 'vue/dist/vue.js',
+            'src':path.resolve(__dirname,'./src')
         }
     },
     module:{
@@ -40,8 +41,8 @@ module.exports = {
                 loader:'vue-loader'
             },
             {
-                test:/\.css$/,
-                loaders:['style-loader','css-loader']
+                test:/\.(scss|css)$/,
+                use:['style-loader','css-loader','sass-loader']
             },
             {
                 test:/\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,
