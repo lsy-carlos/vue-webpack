@@ -3,6 +3,7 @@
         <h3>{{message}}</h3>
         <button @click="goWebLearn('/learnWeb')">learn web url</button>
         <button @click="goWebLearn('/vueEmit')">订阅者模式实现vue $on $emit</button>
+        <button @click="goWebLearn('/flexbox')">flex box</button>
     </div>
 </template>
 

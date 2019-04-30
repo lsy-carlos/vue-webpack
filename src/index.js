@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import App from './app'
 import routes from './route.config'
+import 'src/common/reset.scss'
 
 Vue.use(VueRouter);
 

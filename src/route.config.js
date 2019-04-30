@@ -21,6 +21,10 @@ const routes = [
     {
         path:'/vueEmit',
         component:load('vueEmit')
+    },
+    {
+        path:'/flexbox',
+        component:load('flexbox')
     }
 ]
 
