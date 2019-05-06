@@ -1,10 +1,15 @@
 <template>
     <div class="learn-web">
         <div>
-            <p>url</p>
-            <ul>
-                <li v-for="item in urlList">
-                    <a :href="item.url">{{item.name}}</a>
+            <h1 v-pre>url</h1>
+            <ul class="lean-wrapper">
+                <li v-for="item in urlList" class="wrapper-li">
+                    <h3>{{item.name}}</h3>
+                    <ul class="learn-inner">
+                        <li v-for="url in item.url">
+                            <a :href="url.link" target="_blank">{{url.describe}}</a>
+                        </li>
+                    </ul>
                 </li>
             </ul>
         </div>
@@ -12,7 +17,7 @@
     </div>
 </template>
 <script>
-import note from './data'
+import {note,data} from './data'
 import './index.scss'
 import codeTrans from 'src/common/codeTrans/index'
 
@@ -22,20 +27,7 @@ export default {
     },
     data(){
         return {
-            urlList:[
-                {
-                    name:'vue-router',
-                    url:'https://router.vuejs.org/zh/installation.html'
-                },
-                {
-                    name:'输入url到页面展示发生了什么？',
-                    url:'https://segmentfault.com/a/1190000013662126?utm_source=index-hottest#articleHeader9'
-                },
-                {
-                    name:'web安全',
-                    url:'https://www.cnblogs.com/yzycoder/p/5741507.html'
-                },
-            ],
+            urlList:data,
             reason:'',
             transReason:'',
             notes:note
@@ -47,7 +39,7 @@ export default {
         }
         let a = [1,2,3];
        log(a.map(val=>val*2));
-        log(a)
+        log(note)
     },  
     methods: {
         inputText(){
