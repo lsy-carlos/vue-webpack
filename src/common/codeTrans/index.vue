@@ -1,10 +1,10 @@
 <template>
     <div class="code-trans">
         <div>
-            <p>{{noteTitle}}</p>
+            <p>{{theNoteTitle}}</p>
             <ul>
-                <li v-for="item in notes">
-                    <p>{{item.describe}}</p>
+                <li v-for="item in theNotes">
+                    <p class="describe">{{item.describe}}</p>
                     <span class="code-model" v-html="item.code"></span>
                 </li>
             </ul>
@@ -25,6 +25,9 @@ export default {
         return {
             reason:'',
             transReason:'',
+            theNoteTitle:this.noteTitle,
+            theNotes:this.notes,
+            newDescribe:''
         }
     },
     methods: {

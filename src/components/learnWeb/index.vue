@@ -33,17 +33,23 @@ export default {
             notes:note
         }
     },
-    created() {
-       function changeArr(arr) {
-            arr.map(val=>val*2);
+    created() {    
+       
+        function timeout(ms) {
+            return new Promise((resolve, reject) => {
+                setTimeout(resolve, ms, 'done');
+            });
         }
-        let a = [1,2,3];
-       log(a.map(val=>val*2));
-        log(note)
+
+        timeout(100).then((value) => {
+            console.log(value);
+        });
+
+
     },  
     methods: {
         inputText(){
-            log(this.reason)
+            log(this.reason)    
             this.transReason = this.reason;
             this.transReason = this.transReason.replace(/\n|\r/g,'</br>');
             this.transReason = this.transReason.replace(/\s/g,'&nbsp;');

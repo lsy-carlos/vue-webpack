@@ -25,6 +25,9 @@ const routes = [
     {
         path:'/flexbox',
         component:load('flexbox')
+    },{
+        path:'/javascriptnative',
+        component:load('javascriptNative')
     }
 ]
 
