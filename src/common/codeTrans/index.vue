@@ -34,10 +34,12 @@ export default {
         inputText(){
             log(this.reason)
             this.transReason = this.reason;
-            this.transReason = this.transReason.replace(/\n|\r/g,'</br>');
-            this.transReason = this.transReason.replace(/\s/g,'&nbsp;');
+            this.transReason = this.transReason.replace(/\</g,'&lt;');
+            this.transReason = this.transReason.replace(/\>/g,'&gt;');
+            this.transReason = this.transReason.replace(/\n|\r/g,'</br>');//换行
+            this.transReason = this.transReason.replace(/\s/g,'&nbsp;');//空格
             this.transReason = this.transReason.replace(/^[\/\/]?[\n|\r]$/g,'这是一个注释')
-            this.transReason = this.transReason.replace(/(\/{2}[^\<\/br\>]*\<\/br\>)/g,"<i class='grey-color'>$&</i>")
+            this.transReason = this.transReason.replace(/(\/{2}[^\<\/br\>]*\<\/br\>)/g,"<i class='grey-color'>$&</i>")//注释置灰
         }
     },
 }

@@ -1,6 +1,6 @@
 <template>
     <div class="flex-box">
-        <flex-content v-for="item in flexList" :flex-attribute="item"></flex-content>
+        <flex-content v-for="item in flexList" :flex-attribute="item" :key="$index"></flex-content>
     </div>
 </template>
 <script>
