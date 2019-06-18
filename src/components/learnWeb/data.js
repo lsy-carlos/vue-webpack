@@ -76,6 +76,9 @@ let data=[
                 },{
                     link: 'https://juejin.im/post/5ce4171ff265da1bd04eb4f3',
                     describe: '2019 前端面试 | 知其然，并知其所以然'
+                },{
+                    link: 'https://juejin.im/post/5d05ca79f265da1bc75237ea',
+                    describe: '2019 面试系列 - 简历'
                 }
             ]
         },
@@ -85,6 +88,9 @@ let data=[
                 {
                     link: 'https://juejin.im/entry/5cd0dd9ef265da03ac0d2034',
                     describe: '5种应该避免使用箭头函数的情况'
+                },{
+                    link:'https://juejin.im/post/5cec8a475188255816489878',
+                    describe:'通过一些例子深入了解 JavaScript 的 Async 和 Await'
                 }
             ]
         },
@@ -100,6 +106,9 @@ let data=[
                 },{
                     link:'http://www.ym4j.com/',
                     describe:'源码世界'
+                },{
+                    link:'https://github.com/qq449245884/xiaozhi',
+                    describe:'文章集合'
                 }
             ]
         }

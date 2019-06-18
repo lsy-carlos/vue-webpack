@@ -9,8 +9,15 @@
     i.grey-color{
         color: #666;
     }
-    .describe{
+    .describe{ 
         margin: 10px 0;
         font-weight: 600;
+    }
+    .img-box-city{
+        width: 100%;
+        height: 100px;
+        background: url(../../img/timge.jpg);
+        background-attachment: fixed;
+        margin:15px 0;
     }
 }

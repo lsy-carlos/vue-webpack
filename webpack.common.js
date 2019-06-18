@@ -42,7 +42,15 @@ module.exports = {
             },
             {
                 test:/\.(scss|css)$/,
-                use:['style-loader','css-loader','sass-loader']
+                use: [
+                    {
+                        loader: 'style-loader'
+                    }, {
+                        loader: 'css-loader'
+                    }, {
+                        loader: 'sass-loader'
+                    }
+                ]
             },
             {
                 test:/\.(svg|otf|ttf|woff2?|eot|gif|png|jpe?g)(\?\S*)?$/,

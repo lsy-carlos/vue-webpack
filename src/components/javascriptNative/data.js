@@ -25,6 +25,21 @@ let data = [
     },{
         describe:`querySelector()方法`,
         code:`//取得&nbsp;body&nbsp;元素</br>var&nbsp;body&nbsp;=&nbsp;document.querySelector("body");&nbsp;</br>//取得&nbsp;ID&nbsp;为"myDiv"的元素</br>var&nbsp;myDiv&nbsp;=&nbsp;document.querySelector("#myDiv");&nbsp;</br><i class='grey-color'>//取得类为"selected"的第一个元素</br></i>var&nbsp;selected&nbsp;=&nbsp;document.querySelector(".selected");&nbsp;</br>//取得类为"button"的第一个图像元素</br>var&nbsp;img&nbsp;=&nbsp;document.body.querySelector("img.button");`
+    },{
+        describe:`元素遍历`,
+        code:`Element&nbsp;Traversal&nbsp;API&nbsp;为&nbsp;DOM&nbsp;元素添加了以下&nbsp;5&nbsp;个属性。</br>&nbsp;childElementCount：返回子元素（不包括文本节点和注释）的个数。</br>&nbsp;firstElementChild：指向第一个子元素；firstChild&nbsp;的元素版。</br>&nbsp;lastElementChild：指向最后一个子元素；lastChild&nbsp;的元素版。</br>&nbsp;previousElementSibling：指向前一个同辈元素；previousSibling&nbsp;的元素版。</br>&nbsp;nextElementSibling：指向后一个同辈元素；nextSibling&nbsp;的元素版。</br>支持的浏览器为&nbsp;DOM&nbsp;元素添加了这些属性，利用这些元素不必担心空白文本节点，从而可以更方便地查找&nbsp;DOM&nbsp;元素了</br></br>var&nbsp;i,&nbsp;</br>&nbsp;len,&nbsp;</br>&nbsp;child&nbsp;=&nbsp;element.firstElementChild;&nbsp;</br>while(child&nbsp;!=&nbsp;element.lastElementChild){&nbsp;</br>&nbsp;processChild(child);&nbsp;<i class='grey-color'>//已知其是元素</br></i>&nbsp;child&nbsp;=&nbsp;child.nextElementSibling;&nbsp;</br>}&nbsp;`
+    },{
+        describe:`焦点管理`,
+        code:`document.activeElement&nbsp;属性，这个</br>属性始终会引用&nbsp;DOM&nbsp;中当前获得了焦点的元素</br></br>var&nbsp;button&nbsp;=&nbsp;document.getElementById("myButton");&nbsp;</br>button.focus();&nbsp;</br>alert(document.activeElement&nbsp;===&nbsp;button);&nbsp;//true&nbsp;</br></br>document.hasFocus()方法，这个方法用于确定文档是否获得了焦点。</br>var&nbsp;button&nbsp;=&nbsp;document.getElementById("myButton");</br>button.focus();&nbsp;</br>alert(document.hasFocus());&nbsp;//true&nbsp;`
+    },{
+        describe:'自定义数据属性',
+        code:`HTML5&nbsp;规定可以为元素添加非标准的属性，但要添加前缀&nbsp;data-，目的是为元素提供与渲染无关的</br>信息，或者提供语义信息。这些属性可以任意添加、随便命名，只要以&nbsp;data-开头即可</br></br>&lt;div&nbsp;class="btn"&nbsp;&nbsp;data-id="marbtn"&nbsp;data-date="1514"&gt;click&lt;/div&gt;</br>const&nbsp;btn&nbsp;=&nbsp;document.querySelector('.btn');</br>console.log(btn.dataset.id);//marbtn</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(btn.dataset.date);//1514`
+    },{
+        describe:`scrollIntoView()方法`,
+        code:`scrollIntoView()可以在所有&nbsp;HTML&nbsp;元素上调用，通过滚动浏览器窗口或某个容器元素，调用</br>元素就可以出现在视口中。如果给这个方法传入&nbsp;true&nbsp;作为参数，或者不传入任何参数，那么窗口滚动</br>之后会让调用元素的顶部与视口顶部尽可能平齐。如果传入&nbsp;false&nbsp;作为参数，调用元素会尽可能全部</br>出现在视口中，（可能的话，调用元素的底部会与视口顶部平齐。）不过顶部不一定平齐，`
+    },{
+        describe:`ocument.readyState`,
+        code:`一个文档的&nbsp;readyState&nbsp;可以是以下之一</br>loading&nbsp;/&nbsp;正在加载（document&nbsp;仍在加载）</br>interactive&nbsp;/&nbsp;可交互</br>文档已被解析，"正在加载"状态结束，但是诸如图像，样式表和框架之类的子资源仍在加载。</br>complete&nbsp;/&nbsp;完成</br>文档和所有子资源已完成加载。表示&nbsp;load&nbsp;状态的事件即将被触发。</br>当这个属性的值变化时，document 对象上的readystatechange 事件将被触发</br>document.onreadystatechange&nbsp;=&nbsp;function&nbsp;()&nbsp;{</br>&nbsp;&nbsp;if&nbsp;(document.readyState&nbsp;===&nbsp;"complete")&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;<i class='grey-color'>//</br></i>&nbsp;&nbsp;}</br>}`
     }
 ]
 

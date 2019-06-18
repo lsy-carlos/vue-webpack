@@ -9,12 +9,12 @@
                 </li>
             </ul>
         </div>
+        <div class="img-box-city"></div>
         <textarea cols="30" rows="10" @change="inputText()" v-model="reason"></textarea>
         <textarea cols="30" rows="10" v-model="transReason"></textarea>
     </div>
 </template>
 <script>
-import './index.scss'
 
 export default {
     props:{
@@ -44,3 +44,7 @@ export default {
     },
 }
 </script>
+
+<style>
+    @import './index.scss';
+</style>

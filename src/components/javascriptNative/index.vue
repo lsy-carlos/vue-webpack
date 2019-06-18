@@ -24,12 +24,18 @@ export default {
     },
     mounted() {
         this.$nextTick(function(){
+            console.log('nexttick');
+            
             let maEl = document.getElementById("may-ya");
             maEl.firstChild.nodeValue = 'Some <strong>other</strong> message';
-            let attr = document.createAttribute('data-id');
-            attr.nodeValue = 'this-common';
-            maEl.setAttributeNode(attr);
+            console.log(maEl.webkitMatchesSelector('#may'));
+            // maEl.scrollIntoView();
         })
     },
 }
 </script>
+
+<style>
+    @import './index.scss';
+</style>
+
