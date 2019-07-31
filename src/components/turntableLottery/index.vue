@@ -46,10 +46,10 @@ import { dateFormatFilter} from '@/utils';
 export default {
     data() {
         return{
-            canNot:false,
-            rotaDeg:0,
-            prizes:['苏泊尔电饭煲马1','苏泊尔电饭煲2','苏泊尔电饭3','苏泊尔电饭煲马4','苏泊尔电饭煲马5','苏泊尔电饭煲马6',],
-            prizeUsers:[],
+            canNot:false,//是否能点击抽奖按钮
+            rotaDeg:0,//点击抽奖后旋转的角度
+            prizes:['苏泊尔电饭煲马1','苏泊尔电饭煲2','苏泊尔电饭3','苏泊尔电饭煲马4','苏泊尔电饭煲马5','苏泊尔电饭煲马6',],//奖品的名字
+            prizeUsers:[],//流动展示的中奖人员
         }
     },
     created() {
@@ -62,7 +62,7 @@ export default {
         turntableDraw(num){
             var t = this;
             var listPrize = [];
-            var userList = 11;
+            var userList = 11;//多少个中奖用户
             for (let i = 0; i < userList; i++) {
                 t.prizeUsers.push({
                     name:`陈晨${i}`,
@@ -70,7 +70,7 @@ export default {
                     prize:'一等奖'
                 })
             }
-            t.prizes.forEach((val)=>{
+            t.prizes.forEach((val)=>{ //奖品超过4个字换行
                 let list = [];
                 if(val.length>4){
                     list.push(val.slice(0,4));
@@ -81,16 +81,16 @@ export default {
             if(userList>10){
                  var wrapper = document.getElementById('turntable-lottery-wrapper');
                 var elUser =  wrapper.querySelector('.prize-list');
-                elUser.style.animation = `translatefresh ${userList+9}s infinite linear`
-                let iStyle = document.styleSheets[0];
-                iStyle.insertRule(`@keyframes translatefresh {from { transform: translateY(300px) }to {transform: translateY(-${userList*30}px)}}`,0);
+                elUser.style.animation = `translatefresh ${userList+9}s infinite linear`;//设置动画
+                let iStyle = document.styleSheets[0];//样式表
+                iStyle.insertRule(`@keyframes translatefresh {from { transform: translateY(300px) }to {transform: translateY(-${userList*30}px)}}`,0);//插入动态动画设置
             }
            
             var c=document.getElementById("turntable"),
                 ele = document.getElementById("turntable-wrapper");
             var ctx=c.getContext("2d");
             var twoC = false;//两个谢谢参与
-            if(num%2 == 0){
+            if(num%2 == 0){ 
                 num += 2;
                 twoC = true;
             }else{
@@ -101,7 +101,7 @@ export default {
                 html = [], // 奖项
                 rotateDeg = 360 / num / 2 + 90, // 扇形回转角度
                 container = ele.querySelector('.turntable-bg');
-            function iHtml(index){
+            function iHtml(index){ //设置具体的奖品
                 if(listPrize[index].length>1){
                     html.push(`</br><i>${listPrize[index][0]}</i>`);
                     html.push(`</br><i>${listPrize[index][1]}</i>`);
@@ -129,30 +129,35 @@ export default {
                 }
                 // 填充扇形
                 ctx.fill();
+                ctx.fillStyle = "purple";               //设置填充颜色为紫色
+                ctx.fillStyle = "purple";               //设置填充颜色为紫色
+                ctx.font = '20px "微软雅黑"';           //设置字体               
+                //ctx.strokeText( "left", 450, 400 );
+                ctx.fillText( i, 50, 20 );        //填充文字
                 // 恢复前一个状态
                 ctx.restore();
                 // 奖项列表
                 html.push('<li class="gb-turntable-item"> <span style="');
                 html.push('transform: rotate(' + i * turnNum + 'turn)">');
-                if(i == 0){
+                if(i == 0){ //第一个扇型
                     html.push('谢谢参与');
-                }else if(i+1 <= num/2){
+                }else if(i+1 <= num/2){ //前一半的扇型
                     html.push(t.numToZn(i)+'等奖');
                     iHtml(i-1);
                     
-                }else if(i+1 == (num/2+1) && twoC){
+                }else if(i+1 == (num/2+1) && twoC){//中间的
                     html.push('谢谢参与');
-                }else if(i+1 == (num/2+1) && !twoC){
+                }else if(i+1 == (num/2+1) && !twoC){//中间的
                     html.push(t.numToZn(i)+'等奖');
                     iHtml(i-1);
-                }else if(i+1>(num/2+1) && !twoC){
+                }else if(i+1>(num/2+1) && !twoC){//后半部分扇型
                     html.push(t.numToZn(i)+'等奖');
                     iHtml(i-1);
                 }else if(i+1>(num/2+1) && twoC){
                     html.push(t.numToZn(i-1)+'等奖');
                     iHtml(i-2);
                 }
-                html.push('</span> </li>');
+                html.push('</span> </li>');//结束标签
                 if ((i + 1) === num) {
                     prizeItems.className = 'gb-turntalbe-list';
                     container.appendChild(prizeItems);
