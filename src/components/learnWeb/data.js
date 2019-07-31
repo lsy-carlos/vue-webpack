@@ -16,7 +16,7 @@ let data=[
                     link: 'https://router.vuejs.org/zh/installation.html',
                     describe:'vue-router官方网址'
                 },{
-                    link:'http://hcysun.me/vue-design/art/2vue-constructor.html',
+                    link:'http://hcysun.me',
                     describe:'vue技术内幕'
                 }
             ],
@@ -58,6 +58,9 @@ let data=[
                 {
                     link: 'https://juejin.im/post/5cb45a06f265da03474df54e',
                     describe: ' 9 个 CSS 技巧'
+                },{
+                    link:'https://segmentfault.com/a/1190000018677177',
+                    describe:'理解 CSS 布局和 BFC'
                 }
             ]
         },
@@ -112,6 +115,12 @@ let data=[
                 },{
                     link:'https://juejin.im/post/5d07a51b5188254dd63c21ce',
                     describe:'说说 JavaScript 中函数的防抖 (Debounce) 与节流 (Throttle)'
+                },{
+                    link:'https://juejin.im/post/5d003f51e51d454fbe24a661',
+                    describe:'前端工作学习相关网站收集整理'
+                },{
+                    link: 'https://blog.csdn.net/sinat_22209293/article/details/79101546',
+                    describe: '前端开发里的设计模式'
                 }
             ]
         }

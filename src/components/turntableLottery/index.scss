@@ -1,0 +1,181 @@
+
+.turntable-lottery-wrapper{
+    min-height: 100vh;
+    background:url(./img/bg.png) no-repeat;
+    background-size: 100% 100%;
+    .pull-left{
+        float: left;
+    }
+    .pull-right{
+        float: right;
+    }
+    .red-color{
+        color: #ee0000;
+    }
+    .have-chance{
+        padding-top: 30px;
+        color: #C3AB84;
+        font-size: 16px;
+        text-align: center;
+    }
+    .tip{
+        color: #C3AB84;
+        font-size: 12px;
+        text-align: center;
+        margin-top: 5px;
+    }
+    .turntable-wrapper{
+        padding: 30px 0;
+        position: relative;
+        .btn-turntable{
+            width: 86px;
+            height: 100px;
+            background-color: none;
+            border: none;
+            background: url(./img/btn_choujiang.png) no-repeat;
+            background-size: 100% 100%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            margin-left: -43px;
+            margin-top: -57px;
+            z-index: 9;
+        }
+        .turntable-bg{
+            width: 300px;
+            height: 300px;
+            background: url(./img/bg_zhuanpan.png) no-repeat;
+            background-size: 100% 100%;
+            margin: 0 auto;
+            position: relative;
+            transition: transform 6s ease;
+            .canvas-turntable{
+                width: 260px;
+                height: 260px;
+                display: block;
+                margin: auto;
+                position: absolute;
+                left: 0;
+                right: 0;
+                top: 0;
+                bottom: 0;
+            }
+        }
+        .gb-turntalbe-list{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: inherit;
+            height: inherit;
+            z-index: 2;
+        }
+        .gb-turntable-item{
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            color: #FF5201;
+            font-size:14px;
+            font-weight: 600;
+        }
+        .gb-turntable-item span{
+            position: relative;
+            display: block;
+            padding-top: 30px;
+            /* width: 50px; */
+            margin: 0 auto;
+            text-align: center;
+            -webkit-transform-origin: 50% 150px;
+            -ms-transform-origin: 50% 150px;
+            transform-origin: 50% 150px;
+            i{
+                font-weight: normal;
+                font-size: 12px;
+            }
+        }
+    }
+    .two-btn{
+        width: 300px;
+        margin:0 auto;
+        button{
+            border: none;
+            width: 135px;
+            height: 40px;
+            background: url(./img/btn_bg.png) no-repeat;
+            background-size: 100% 100%;
+            background-color: none;
+            text-align: center;
+            line-height: 40px;
+            color: #FFF2C4;
+            font-size: 14px;
+        }
+    }
+    .win-prize-list{
+        padding: 34px 20px 20px;
+        .list-wrapper{
+            height: 360px;
+            background:rgba(255,242,196,0.4);
+            border-radius:5px 5px 8px 8px;
+            position: relative;
+            padding: 0 15px;
+            .title{
+                width: 100%;
+                height: 44px;
+                background: url(./img/title.png) no-repeat center center;
+                background-size: 118px 16px;
+            }
+             .surplus-line{
+                height: 12px;
+                width: 100%;
+                position: absolute;
+                left: 0;
+                top: 0;
+                background:linear-gradient(to bottom,rgba(62,59,49,1) 0%,rgba(94,91,82,0) 100%);
+                border-radius: 5px 5px 8px 8px;
+            }
+            .list-box{
+                border-top: 1px solid;
+                border-color: rgba(72,69,59,0.3);
+                height: 315px;
+                overflow: hidden;
+                .prize-list{
+                    .prize-list-item{
+                        display: block;
+                        padding: 0 3px;
+                        margin-top: 10px;
+                        font-size:14px;
+                        color:rgba(255,242,196,1);
+                        line-height:20px;
+                        text-align: center;
+                        position: relative;
+                        .list-left{
+                            position: absolute;
+                            left: 3px;
+                            top: 0;
+                        }
+                        .list-right{
+                            position: absolute;
+                            right: 3px;
+                            top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .my-prize{
+        padding-bottom: 24px;
+        text-align: center;  
+        button{
+            width:144px;
+            height:32px;
+            background:rgba(251,205,99,0.3);
+            border-radius:16px;
+            border: none;
+            font-size:14px;
+            color:rgba(251,205,99,1);
+            line-height:20px;
+        } 
+    }
+}
