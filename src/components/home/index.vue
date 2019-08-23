@@ -5,6 +5,7 @@
         <button @click="goWebLearn('/vueEmit')">订阅者模式实现vue $on $emit</button>
         <button @click="goWebLearn('/flexbox')">flex box</button>
         <button @click="goWebLearn('/javascriptnative')">原生js</button>
+        <button @click="goWebLearn('/attrListeners')">vue的$attr和$listeners</button>
         <div class="css-3"></div>
     </div>
 </template>

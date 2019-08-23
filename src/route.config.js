@@ -28,6 +28,9 @@ const routes = [
     },{
         path:'/javascriptnative',
         component:load('javascriptNative')
+    },{
+        path: '/attrListeners',
+        component: load('aboutAttr')
     }
 ]
 

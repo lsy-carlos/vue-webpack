@@ -39,9 +39,9 @@
 </Page>
 </template>
 <script>
-import http from '@/http'
+import http from 'src/http'
 import './index.scss'
-import { dateFormatFilter} from '@/utils';
+import { dateFormatFilter} from 'src/utils';
 
 export default {
     data() {
