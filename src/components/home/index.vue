@@ -25,16 +25,11 @@ export default {
         }
     },
     created() {
-        function person(firstName, lastName, age){
-            const person = {}
-            person.firstName = firstName;
-            person.lastName = lastName;
-            person.age = age;
-            return person;
-        }
+       let aSet = new Set([['lsg',24],['lyf',23]]);
+       let aMap = new Map(aSet);
 
-        const mike = new person('mike', 'grand', 23);
-        console.log('<\/script>');
+
+
     },
 }
 </script>

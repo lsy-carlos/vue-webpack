@@ -38,8 +38,16 @@ let data = [
         describe:`scrollIntoView()方法`,
         code:`scrollIntoView()可以在所有&nbsp;HTML&nbsp;元素上调用，通过滚动浏览器窗口或某个容器元素，调用</br>元素就可以出现在视口中。如果给这个方法传入&nbsp;true&nbsp;作为参数，或者不传入任何参数，那么窗口滚动</br>之后会让调用元素的顶部与视口顶部尽可能平齐。如果传入&nbsp;false&nbsp;作为参数，调用元素会尽可能全部</br>出现在视口中，（可能的话，调用元素的底部会与视口顶部平齐。）不过顶部不一定平齐，`
     },{
-        describe:`ocument.readyState`,
+        describe:`document.readyState`,
         code:`一个文档的&nbsp;readyState&nbsp;可以是以下之一</br>loading&nbsp;/&nbsp;正在加载（document&nbsp;仍在加载）</br>interactive&nbsp;/&nbsp;可交互</br>文档已被解析，"正在加载"状态结束，但是诸如图像，样式表和框架之类的子资源仍在加载。</br>complete&nbsp;/&nbsp;完成</br>文档和所有子资源已完成加载。表示&nbsp;load&nbsp;状态的事件即将被触发。</br>当这个属性的值变化时，document 对象上的readystatechange 事件将被触发</br>document.onreadystatechange&nbsp;=&nbsp;function&nbsp;()&nbsp;{</br>&nbsp;&nbsp;if&nbsp;(document.readyState&nbsp;===&nbsp;"complete")&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;<i class='grey-color'>//</br></i>&nbsp;&nbsp;}</br>}`
+    },
+    {
+        describe: `deepClone`,
+        code: `var&nbsp;deepCopy&nbsp;=&nbsp;function(obj)&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(typeof&nbsp;obj&nbsp;!==&nbsp;'object')&nbsp;return;</br>&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;根据obj的类型判断是新建一个数组还是对象</br>&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;newObj&nbsp;=&nbsp;obj&nbsp;instanceof&nbsp;Array&nbsp;?&nbsp;[]&nbsp;:&nbsp;{};</br>&nbsp;&nbsp;&nbsp;&nbsp;for&nbsp;(var&nbsp;key&nbsp;in&nbsp;obj)&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(obj.hasOwnProperty(key))&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;newObj[key]&nbsp;=&nbsp;typeof&nbsp;obj[key]&nbsp;===&nbsp;'object'&nbsp;?&nbsp;deepCopy(obj[key])&nbsp;:&nbsp;obj[key];</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;newObj;</br>}</br></br>`
+    },
+    {
+        describe: `export重命名语句`,
+        code: `export {a as m}</br>原命名 as 新命名`
     }
 ]
 
