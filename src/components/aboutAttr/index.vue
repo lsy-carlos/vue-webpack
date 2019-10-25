@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>-------------------------------------------------------</p>
-        关于$attr和$listeners的使用
+        关于$attr和$listeners/provide和inject的使用
         <children :normalData="normalData" :attrData="attrData" :anyData="anyData" @msgUpGrand="grandPan"></children>
     </div>
 </template>
@@ -12,6 +12,9 @@ import children from './children.vue'
 export default {
     components:{
         children
+    },
+    provide:{
+        provideData:'这是一个provide数据'
     },
     data() {
         return {
