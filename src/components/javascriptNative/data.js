@@ -48,7 +48,13 @@ let data = [
     {
         describe: `export重命名语句`,
         code: `export {a as m}</br>原命名 as 新命名`
-    }
+    },{
+        describe: `单例模式也叫单体模式，核心思想是确保一个类只对应一个实例。`,
+        code: `<i class='grey-color'>//ES5实现</br></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;function&nbsp;President(name)&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;如果已存在对应的实例</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;if&nbsp;(typeof&nbsp;President.onlyPresident&nbsp;===&nbsp;'object')&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;President.onlyPresident</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i class='grey-color'>//否则正常创建实例</br></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;this.name&nbsp;=&nbsp;name</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;//&nbsp;缓存</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;President.onlyPresident&nbsp;=&nbsp;this</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;return&nbsp;this</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;president1&nbsp;=&nbsp;new&nbsp;President("奥巴马")</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;var&nbsp;president2&nbsp;=&nbsp;new&nbsp;President("特朗普")</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;console.log(president1.name,president1.name);//奥巴马&nbsp;奥巴马`
+    }, {
+        describe: `URL.createObjectURL创建可使用url`,
+        code: `body：</br>&lt;input&nbsp;type="file"&nbsp;id="input"&nbsp;multiple&nbsp;onchange="handleFiles(this.files)"&gt;</br>&lt;div&nbsp;class="img-select"&gt;</br></br>&lt;/div&gt;</br></br>javascript：</br>function&nbsp;handleFiles(fileList)&nbsp;{</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;imgBox&nbsp;=&nbsp;document.querySelector('.img-select');</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;file&nbsp;=&nbsp;fileList[0];</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;let&nbsp;fileUrl&nbsp;=&nbsp;URL.createObjectURL(file);</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;const&nbsp;img&nbsp;=&nbsp;document.createElement('img');</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;img.src&nbsp;=&nbsp;fileUrl;</br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;imgBox.appendChild(img);</br>&nbsp;&nbsp;&nbsp;&nbsp;}`
+    },
 ]
 
 export {data as notes}

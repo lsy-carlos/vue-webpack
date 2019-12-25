@@ -31,6 +31,9 @@ const routes = [
     },{
         path: '/attrListeners',
         component: load('aboutAttr')
+    },{
+        path: '/designPattern',
+        component: load('designPattern')
     }
 ]
 
