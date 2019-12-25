@@ -5,7 +5,7 @@
   "sideEffects": false,
   "private": true,
   "dependencies": {
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.13",
     "vue": "^2.6.10",
     "webpack": "^4.29.6",
     "webpack-cli": "^3.3.0"
