@@ -34,7 +34,11 @@ const routes = [
     },{
         path: '/designPattern',
         component: load('designPattern')
+    },{
+        path: '/curry',
+        component: load('curry')
     }
+    
 ]
 
 export default routes 
