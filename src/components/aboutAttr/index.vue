@@ -1,5 +1,6 @@
 <template>
     <div>
+        <div class="add-class-cool">cll</div>
         <p>-------------------------------------------------------</p>
         关于$attr和$listeners/provide和inject的使用
         <children :normalData="normalData" :attrData="attrData" :anyData="anyData" @msgUpGrand="grandPan"></children>
@@ -23,6 +24,11 @@ export default {
             anyData:"随便的"
         }
     },
+    created(){
+        this.$once('hook:beforeDestroy', () => {
+            console.log('我被销毁了啊');   
+        })
+    },
     methods: {
         grandPan(){
             console.log('从孙组件调用了哦');
@@ -30,3 +36,9 @@ export default {
     },
 }
 </script>
+
+<style scoped>
+    .add-class-cool {
+        color: red;
+    }
+</style>

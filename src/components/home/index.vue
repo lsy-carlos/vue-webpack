@@ -23,6 +23,11 @@ export default {
             messageInput: ""
         };
     },
+    computed: {
+      message(){
+          return messageInput+'n'
+      }  
+    },
     methods: {
         goWebLearn(path) {
             this.$router.push(path);
