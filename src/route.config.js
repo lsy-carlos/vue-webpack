@@ -37,6 +37,9 @@ const routes = [
     },{
         path: '/curry',
         component: load('curry')
+    },{
+        path:'/slotTry',
+        component:load('slotTry')
     }
     
 ]

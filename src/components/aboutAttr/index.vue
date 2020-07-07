@@ -30,8 +30,8 @@ export default {
         })
     },
     methods: {
-        grandPan(){
-            console.log('从孙组件调用了哦');
+        grandPan(msg){
+            console.log(msg);
         }
     },
 }

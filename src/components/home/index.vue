@@ -8,6 +8,7 @@
         <button @click="goWebLearn('/attrListeners')">vue的$attr和$listeners</button>
         <button @click="goWebLearn('/designPattern')">订阅模式</button>
         <button @click="goWebLearn('/curry')">柯里化</button>
+        <button @click="goWebLearn('/slotTry')">slot</button>
         <div id="test-click">test-click</div>
         <div class="css-3"></div>
     </div>
@@ -22,11 +23,6 @@ export default {
             message: "hello vue",
             messageInput: ""
         };
-    },
-    computed: {
-      message(){
-          return messageInput+'n'
-      }  
     },
     methods: {
         goWebLearn(path) {
