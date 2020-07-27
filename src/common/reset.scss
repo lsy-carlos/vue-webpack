@@ -21,8 +21,8 @@ h1,h2,h3,h4,h5,h6{
 select,input,img,select{
 	vertical-align:middle;
 } 
-.clearfloat:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
-.clearfloat{zoom:1}
+.clearfix:after{display:block;clear:both;content:"";visibility:hidden;height:0} 
+.clearfix{zoom:1}
 button{
     padding: 2px 6px;
     border: 1px solid;

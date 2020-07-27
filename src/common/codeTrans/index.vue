@@ -3,7 +3,7 @@
         <div>
             <p>{{theNoteTitle}}</p>
             <ul>
-                <li v-for="item in theNotes">
+                <li v-for="(item,index) in theNotes" :key="index">
                     <p class="describe">{{item.describe}}</p>
                     <span class="code-model" v-html="item.code"></span>
                 </li>

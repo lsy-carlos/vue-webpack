@@ -1,10 +1,35 @@
-const merge = require('webpack-merge');
-const common = require('./webpack.common.js');
+const merge = require("webpack-merge");
+const common = require("./webpack.common.js");
 
-module.exports = merge(common,{
-    devtool:'inline-source-map',
-    devServer:{
-        contentBase:'./dist',
-        hot:true
-    }
-})
+const os = require("os");
+const host = findLocalIp();
+
+function findLocalIp() {
+  let ip = "",
+    interfaces = os.networkInterfaces();
+
+  const excludeIps = ["127.0.0.1"];
+
+  for (const i of Object.values(interfaces)) {
+    i.forEach((item) => {
+      if (
+        item.family === "IPv4" &&
+        !item.internal &&
+        !excludeIps.includes(item.address)
+      ) {
+        ip = item.address;
+      }
+    });
+  }
+
+  return ip;
+}
+
+module.exports = merge(common, {
+  devtool: "source-map",
+  devServer: {
+    host: host,
+    contentBase: "./dist",
+    hot: true,
+  },
+});

@@ -1,47 +1,82 @@
-
-const load = name => {
-    return r=>require.ensure([],()=>{
+const load = (name) => {
+  return (r) =>
+    require.ensure(
+      [],
+      () => {
         r(require(`./components/${name}/index.vue`));
-    },'component')
-}
- 
-const routes = [
-    {
-        path: '/',
-        redirect: '/home',
-    },
-    {
-        path:'/home',
-        component: load('home')
-    },
-    {
-        path:'/learnWeb',
-        component: load('learnWeb')
-    },
-    {
-        path:'/vueEmit',
-        component:load('vueEmit')
-    },
-    {
-        path:'/flexbox',
-        component:load('flexbox')
-    },{
-        path:'/javascriptnative',
-        component:load('javascriptNative')
-    },{
-        path: '/attrListeners',
-        component: load('aboutAttr')
-    },{
-        path: '/designPattern',
-        component: load('designPattern')
-    },{
-        path: '/curry',
-        component: load('curry')
-    },{
-        path:'/slotTry',
-        component:load('slotTry')
-    }
-    
-]
+      },
+      "component"
+    );
+};
 
-export default routes 
+const routes = [
+  {
+    path: "/",
+    redirect: "/home",
+  },
+  {
+    path: "/home",
+    component: load("home"),
+    meta: { title: "首页" },
+  },
+  {
+    path: "/learnWeb",
+    component: load("learnWeb"),
+    meta: { title: "学习web" },
+  },
+  {
+    path: "/vueEmit",
+    component: load("vueEmit"),
+    meta: { title: "vue的emit" },
+  },
+  {
+    path: "/flexbox",
+    component: load("flexbox"),
+    meta: { title: "学习flexbox" },
+  },
+  {
+    path: "/javascriptnative",
+    component: load("javascriptNative"),
+    meta: { title: "原生js" },
+  },
+  {
+    path: "/attrListeners",
+    component: load("aboutAttr"),
+    meta: { title: "关于vue的$attr和$listeners、provide和inject" },
+    children: [
+      {
+        path: "/routerChildren",
+        name: "routerChildren",
+        component: () => import("src/components/aboutAttr/routerChildren.vue"),
+        caseSensitive: false,
+      },
+    ],
+  },
+  {
+    path: "/designPattern",
+    component: load("designPattern"),
+    meta: { title: "发布订阅模式" },
+  },
+  {
+    path: "/curry",
+    component: load("curry"),
+    meta: { title: "函数柯里化" },
+  },
+  {
+    path: "/slotTry",
+    component: load("slotTry"),
+    meta: { title: "学习vue插槽" },
+  },
+  {
+    path: "/cssShow",
+    component: load("cssShow"),
+    meta: { title: "酷炫css" },
+  },
+  {
+    path: "/learnRegExp",
+    component: load("learnRegExp"),
+    meta: { title: "学习正则" },
+  },
+];
+
+export default routes;

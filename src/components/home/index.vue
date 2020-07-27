@@ -1,44 +1,60 @@
 <template>
-    <div>
-        <h3>{{message}}</h3>
-        <button @click="goWebLearn('/learnWeb')">learn web url</button>
-        <button @click="goWebLearn('/vueEmit')">订阅者模式实现vue $on $emit</button>
-        <button @click="goWebLearn('/flexbox')">flex box</button>
-        <button @click="goWebLearn('/javascriptnative')">原生js</button>
-        <button @click="goWebLearn('/attrListeners')">vue的$attr和$listeners</button>
-        <button @click="goWebLearn('/designPattern')">订阅模式</button>
-        <button @click="goWebLearn('/curry')">柯里化</button>
-        <button @click="goWebLearn('/slotTry')">slot</button>
-        <div id="test-click">test-click</div>
-        <div class="css-3"></div>
-    </div>
+  <div>
+    <h3>{{ message }}</h3>
+    <button @click="goWebLearn('/learnWeb')">learn web url</button>
+    <button @click="goWebLearn('/vueEmit')">订阅者模式实现vue $on $emit</button>
+    <button @click="goWebLearn('/flexbox')">flex box</button>
+    <button @click="goWebLearn('/javascriptnative')">原生js</button>
+    <button @click="goWebLearn('/attrListeners')">
+      vue的$attr和$listeners
+    </button>
+    <button @click="goWebLearn('/designPattern')">订阅模式</button>
+    <button @click="goWebLearn('/curry')">柯里化</button>
+    <button @click="goWebLearn('/slotTry')">slot</button>
+    <div id="test-click">test-click</div>
+    <div class="css-3"></div>
+    <!-- <curry></curry> -->
+    <input type="text" v-model.number="count" />
+    <div>{{ showCount() }}</div>
+    <button @click="countAdd()">addCount</button>
+    <button @click="testDebounce('jj', 'jdhhd', 'jjjhhjgu')">测试去抖</button>
+    <aside-right></aside-right>
+  </div>
 </template>
 
 <script>
 import "./index.scss";
+import curry from "../curry/index";
+import AsideRight from "src/common/aside-right.vue";
+import { dateFormatFilter, debounce } from "src/utils/index.js";
 
 export default {
-    data() {
-        return {
-            message: "hello vue",
-            messageInput: ""
-        };
-    },
-    methods: {
-        goWebLearn(path) {
-            this.$router.push(path);
-        }
-    },
-    created() {
-        var obj = {name:"Smiley"};
-        var greeting = function(str, lang){
-            this.value = 'greetingValue';
-            console.log("Welcome "+this.name+" to "+str+" in "+lang);
-        };
-        var objGreeting = greeting.bind(obj, 'the world'); 
+  components: {
+    curry,
+    AsideRight,
+  },
+  data() {
+    return {
+      message: "hello vue",
+      messageInput: "",
+      queryTest: "",
+      count: 1,
+    };
+  },
+  created() {
+    /* console.log(dateFormatFilter(new Date().getTime(), "yyyy-MM-dd hh:mm"));
+    if (this.$route.query.set_i) {
+      sessionStorage.setItem("test", "this is test");
+    }
+    var obj = { name: "Smiley" };
+    var greeting = function(str, lang) {
+      this.value = "greetingValue";
+      console.log("Welcome " + this.name + " to " + str + " in " + lang);
+    };
+    var objGreeting = greeting.bind(obj, "the world");
 
-        objGreeting('JS')
-       /*  this.$nextTick(() => {
+    objGreeting("JS"); */
+    /*  this.$nextTick(() => {
             var EventTarget = function() {
                 this._listener = {};
             };
@@ -140,7 +156,24 @@ export default {
                 }
             };
         }); */
-        
-    }
+  },
+  methods: {
+    goWebLearn(path) {
+      this.$router.push(path);
+    },
+    countAdd() {
+      this.count++;
+    },
+    showCount() {
+      return Date.now() + `__${this.count}`;
+    },
+    testDebounce: debounce(
+      (...mal) => {
+        console.log(mal);
+      },
+      1000,
+      this
+    ),
+  },
 };
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="curry-wrapper">
     柯里化
     <button @click="strictCurry()">运行</button>
   </div>
@@ -13,7 +13,7 @@ export default {
       
     }
   }, 
-  created() {
+  created() { 
     /* ------------------------ 柯里化 ------------------------ */
         function addNumber(x,y,z,c,v){
           return x+y+z+c+v;
@@ -88,3 +88,9 @@ export default {
   }
 }
 </script>
+
+<style lang='scss' scoped>
+  .curry-wrapper{
+    margin-top:20px;
+  }
+</style>
