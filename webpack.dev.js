@@ -29,6 +29,7 @@ module.exports = merge(common, {
   devtool: "source-map",
   devServer: {
     host: host,
+    port: "8493",
     contentBase: "./dist",
     hot: true,
   },

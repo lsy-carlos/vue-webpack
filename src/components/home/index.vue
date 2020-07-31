@@ -25,13 +25,11 @@
 <script>
 import "./index.scss";
 import curry from "../curry/index";
-import AsideRight from "src/common/aside-right.vue";
 import { dateFormatFilter, debounce } from "src/utils/index.js";
 
 export default {
   components: {
     curry,
-    AsideRight,
   },
   data() {
     return {

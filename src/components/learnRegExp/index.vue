@@ -1,5 +1,8 @@
 <template>
-  <div>正则</div>
+  <div>
+    正则
+    <aside-right></aside-right>
+  </div>
 </template>
 <script>
 export default {

@@ -3,7 +3,7 @@ const load = (name) => {
     require.ensure(
       [],
       () => {
-        r(require(`./components/${name}/index.vue`));
+        r(require(`src/components/${name}/index.vue`));
       },
       "component"
     );
@@ -76,6 +76,16 @@ const routes = [
     path: "/learnRegExp",
     component: load("learnRegExp"),
     meta: { title: "学习正则" },
+  },
+  {
+    path: "/promiseDemo",
+    component: load("promiseDemo"),
+    meta: { title: "手写Promise" },
+  },
+  {
+    path: "/learnES6",
+    component: load("learnES6"),
+    meta: { title: "学习es6" },
   },
 ];
 

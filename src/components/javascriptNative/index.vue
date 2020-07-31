@@ -4,6 +4,7 @@
     <div id="may-ya">
       d
     </div>
+    <aside-right></aside-right>
   </div>
 </template>
 <script>
@@ -51,6 +52,7 @@ export default {
       //find:返回满足条件的内容
       const findRes = items.find((item) => item.name === "bike");
       console.log(findRes); //{name: "bike", price: "100"}
+      //
     },
   },
 };

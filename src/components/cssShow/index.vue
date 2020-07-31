@@ -1,7 +1,14 @@
 <template>
   <div class="css-wrapper">
-    <a class="a-btn" @click="btnClick($event)">button1</a>
-    <a class="a-btn" @click="btnClick($event)">button2</a>
+    <div class="btn-wrapper">
+      <a class="a-btn" @click="btnClick($event)">button1</a>
+      <a class="a-btn" @click="btnClick($event)">button2</a>
+    </div>
+
+    <div class="input-div">
+      <div class="input" contenteditable="true">请输入内容</div>
+    </div>
+    <aside-right></aside-right>
   </div>
 </template>
 

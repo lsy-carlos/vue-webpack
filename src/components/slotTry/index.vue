@@ -5,6 +5,7 @@
         这个是重写之后的header
       </div>
     </baseLayout>
+    <aside-right></aside-right>
   </div>
 </template>
 
@@ -53,7 +54,7 @@ export default {
 
       return fmt;
     }
-    dateFormate(new Date().getTime(),'yyyy-MM-dd HH:mm:ss q')
+    dateFormate(new Date().getTime(), "yyyy-MM-dd HH:mm:ss q");
   },
 };
 </script>
