@@ -18,7 +18,7 @@ export function dateFormatFilter(dat, fmt = "yyyy-MM-dd hh:mm:ss") {
 }
 
 export function debounce(fn, delay, context) {
-  let timer;
+  let timer = null;
   return (...mal) => {
     if (timer) {
       //上一个定时器的函数还没有执行，则在重刷一个定时器
@@ -29,31 +29,46 @@ export function debounce(fn, delay, context) {
     }, delay);
   };
 }
-//过了delay时间执行第一次
-export function throttle(fn, delay, immediately = false, context) {
-  let thflag = false;
-  return () => {
-    if (immediately) {
-      //先立即执行一次
-      immediately = false;
-      fn.call(context);
+//节流
+export function throttle(fn, delay) {
+  if (typeof fn !== "function") {
+    return;
+  }
+  let timer = null;
+  return function() {
+    const _this = this;
+    if (!timer) {
+      timer = setTimeout(() => {
+        fn.apply(_this, [...arguments]);
+        timer = null;
+      }, delay);
     }
-    if (thflag) {
-      return;
-    }
-    thflag = true;
-    setTimeout(() => {
-      fn.call(context);
-      thflag = false;
-    }, delay);
   };
 }
-
-window.onscroll = throttle(
-  () => {
-    console.log("正在节流");
-  },
-  1000,
-  true,
-  this
-);
+export function deepClone(values) {
+  let copy = null;
+  if (values === null || typeof values !== "object") {
+    return values;
+  }
+  if (values instanceof Date) {
+    copy = new Date();
+    copy.setTime(values.getTime());
+    return copy;
+  }
+  if (values instanceof Array) {
+    copy = [];
+    for (let i = 0, len = values.length; i < len; i++) {
+      copy[i] = deepClone(values[i]);
+    }
+    return copy;
+  }
+  if (values instanceof Object) {
+    copy = {};
+    for (let attr in values) {
+      if (values.hasOwnProperty(attr)) {
+        copy[attr] = deepClone(values[attr]);
+      }
+      return copy;
+    }
+  }
+}

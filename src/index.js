@@ -17,10 +17,14 @@ window.log = console.log.bind(null);
 const router = new VueRouter({
   routes,
 });
-
 router.beforeEach((to, from, next) => {
   console.log("beforeEach");
+
   document.title = to.meta.title;
+  if (to.path == "/learnWeb") {
+    next("/vueEmit");
+  } else {
+  }
   next();
 });
 

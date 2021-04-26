@@ -5,6 +5,7 @@
   "sideEffects": false,
   "private": true,
   "dependencies": {
+    "axios": "^0.21.1",
     "lodash": "^4.17.11",
     "vconsole": "^3.3.4",
     "vue": "^2.6.10",
@@ -21,6 +22,7 @@
     "css-loader": "^1.0.1",
     "file-loader": "^3.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "mockjs": "^1.1.0",
     "node-sass": "^4.11.0",
     "postcss-loader": "^3.0.0",
     "progress-bar-webpack-plugin": "^1.12.1",

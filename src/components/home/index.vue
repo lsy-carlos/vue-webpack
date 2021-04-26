@@ -1,5 +1,8 @@
 <template>
   <div>
+    <div class="test" id="test">
+      测试字体大小
+    </div>
     <h3>{{ message }}</h3>
     <button @click="goWebLearn('/learnWeb')">learn web url</button>
     <button @click="goWebLearn('/vueEmit')">订阅者模式实现vue $on $emit</button>
@@ -14,18 +17,19 @@
     <div id="test-click">test-click</div>
     <div class="css-3"></div>
     <!-- <curry></curry> -->
-    <input type="text" v-model.number="count" />
+    <input type="text" v-model.number="count" @input="throttlefn(count)" />
     <div>{{ showCount() }}</div>
     <button @click="countAdd()">addCount</button>
     <button @click="testDebounce('jj', 'jdhhd', 'jjjhhjgu')">测试去抖</button>
     <aside-right></aside-right>
+    <span>{{ nowtime() }}</span>
   </div>
 </template>
 
 <script>
 import "./index.scss";
 import curry from "../curry/index";
-import { dateFormatFilter, debounce } from "src/utils/index.js";
+import { dateFormatFilter, debounce, throttle } from "src/utils/index.js";
 
 export default {
   components: {
@@ -40,6 +44,11 @@ export default {
     };
   },
   created() {
+    let a = [{ name: 1, age: 12 }];
+    let b = [{ name: 1, age: 12 }];
+    let c = [...new Set([...a, ...b])];
+    console.log(c);
+
     /* console.log(dateFormatFilter(new Date().getTime(), "yyyy-MM-dd hh:mm"));
     if (this.$route.query.set_i) {
       sessionStorage.setItem("test", "this is test");
@@ -156,6 +165,12 @@ export default {
         }); */
   },
   methods: {
+    throttlefn: throttle(function(count) {
+      console.log(count, "节流");
+    }, 700),
+    nowtime() {
+      return Date.now();
+    },
     goWebLearn(path) {
       this.$router.push(path);
     },
@@ -175,3 +190,8 @@ export default {
   },
 };
 </script>
+<style lang="scss" scoped>
+.test {
+  font-size: 12px;
+}
+</style>

@@ -87,6 +87,16 @@ const routes = [
     component: load("learnES6"),
     meta: { title: "学习es6" },
   },
+  {
+    path: "/algorithm",
+    component: load("algorithm"),
+    meta: { title: "算法" },
+  },
+  {
+    path: "/test",
+    component: load("test"),
+    meta: { title: "测试页" },
+  },
 ];
 
 export default routes;
